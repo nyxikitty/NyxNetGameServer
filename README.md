@@ -1,4 +1,4 @@
-# Distributed Game Server Infrastructure
+# NyxNet Game Server Infrastructure
 
 A production-ready, TypeScript-based distributed game server infrastructure with custom binary protocol, authentication plugins, and microservices architecture.
 
