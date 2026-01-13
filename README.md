@@ -123,5 +123,3 @@ API key-based authentication for server-to-server communication.
 ## License
 
 MIT
-# NyxNetGameServer
-# NyxNetGameServer
