@@ -1,0 +1,92 @@
+{
+  "server": {
+    "name": "NyxNet Game Server",
+    "version": "2.0.0",
+    "protocol": {
+      "magic": [66, 78],
+      "version": 1
+    }
+  },
+  "nameServer": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 8888,
+    "healthCheckTimeout": 15000
+  },
+  "masterServer": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 9000,
+    "capacity": 10000,
+    "matchmaking": {
+      "enabled": true,
+      "interval": 1000,
+      "minPlayers": 2,
+      "maxPlayers": 10
+    }
+  },
+  "gameServers": {
+    "enabled": true,
+    "instances": [
+      { "port": 9001, "capacity": 100 },
+      { "port": 9002, "capacity": 100 },
+      { "port": 9003, "capacity": 100 }
+    ],
+    "rooms": {
+      "defaultRooms": ["lobby"],
+      "maxPlayers": 10
+    }
+  },
+  "chatServer": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 9100,
+    "capacity": 1000,
+    "maxMessageHistory": 100,
+    "defaultRooms": ["general", "help", "trade"]
+  },
+  "voiceServer": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 9200,
+    "capacity": 500,
+    "defaultChannels": ["general", "team1", "team2"]
+  },
+  "auth": {
+    "plugins": {
+      "simpleAuth": {
+        "enabled": true,
+        "appId": "simple-auth-v1",
+        "tokenExpiration": 86400000
+      },
+      "oauth": {
+        "enabled": true,
+        "appId": "oauth-v1",
+        "clientId": "game-client-123",
+        "tokenExpiration": 3600000,
+        "authCodeExpiration": 300000
+      },
+      "apiKey": {
+        "enabled": true,
+        "appId": "apikey-v1",
+        "rateLimit": 1000
+      }
+    }
+  },
+  "security": {
+    "encryption": {
+      "enabled": false,
+      "key": "0x5E"
+    },
+    "rateLimit": {
+      "enabled": true,
+      "maxRequestsPerSecond": 100
+    }
+  },
+  "logging": {
+    "level": "info",
+    "console": true,
+    "file": false,
+    "filePath": "./logs/server.log"
+  }
+}

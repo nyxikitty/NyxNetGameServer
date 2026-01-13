@@ -1,0 +1,41 @@
+{
+  "name": "distributed-game-server",
+  "version": "2.0.0",
+  "description": "Distributed game server infrastructure with custom binary protocol",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "bridge": "ts-node src/websocket-bridge.ts",
+    "clean": "rm -rf dist",
+    "watch": "tsc --watch",
+    "lint": "eslint src/**/*.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "game-server",
+    "distributed",
+    "netcode",
+    "multiplayer"
+  ],
+  "author": "Nyxi Kitty",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/ws": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "eslint": "^8.54.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ws": "^8.16.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
